@@ -34,7 +34,7 @@ pilot crash后，会进行对应的crash之前的日志输出，根据日志可�
 但是集群内在做集群级别的更新，导致短时间内，svc变化频繁，持续性的推送导致线上pilot OOM产生。具体见日志：
 ![pilot crash log](./images/pilot-crash-log.png)
 
-### 3、排查pilot crash后启动过程
+### 3、排查pilot crash后Envoy启动过程
 pilot OOM后，会被k8s自动恢复。启动过程中，可以看到，观察envoy日志，可以看到pilot确实向envoy推送的不完整的推送。
 从envoy的日志可以看到，这个过程发生在envoy启动过程中。
 ![envoy receive cds](./images/envoy-receive-cds.png)
